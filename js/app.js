@@ -16,6 +16,31 @@ jQuery(document).ready(function ($) {
      	dots:false,
         prevArrow: '<span class="slick-prev slick-nav slick-nav--prev" aria-label="previous"></span>',
         nextArrow: '<span class="slick-next slick-nav slick-nav--next" aria-label="next"></span>',
+        responsive: [
+ {
+      breakpoint: 860,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 420,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+
+		    
+		  ]
     });
      $('.slider').slick({
         autoplay: true,
@@ -29,25 +54,50 @@ jQuery(document).ready(function ($) {
         initialSlide: 0,
     });
 
+jQuery(document).ready(function() { 
+   
+    var overlay = $('#overlay');
+    var open_modal = $('.open_modal'); 
+    var close = $('.modal_close, #overlay'); 
+    var modal = $('.modal_div'); 
+	
+     open_modal.click( function(event){ 
+         event.preventDefault(); 
+         var div = $(this).attr('href'); 
+         overlay.fadeIn(400,
+             function(){
+                 $(div) 
+                     .css('display', 'block') 
+                     .animate({opacity: 1, }, 200);
+         });
+     });
 
+     close.click( function(){-
+            modal 
+             .animate({opacity: 0, }, 200, 
+                 function(){ 
+                     $(this).css('display', 'none');
+                     overlay.fadeOut(400); 
+                 }
+             );
+     });
+});
 
     
 
 
      //menu
        $('.mob_start').click(function(e) {
-    var $mob_part = $('.menu');
-    if ($mob_part.css('display') != 'block') {
-    	$(this).addClass('active');
-        $mob_part.animate({height: "show"}  ,"1000");
-         $mob_part.addClass('m_menu');}
-    else{
-         $mob_part.animate({height: "hide"},  "1000");
-         $mob_part.removeClass('m_menu');
+    var $mob_part = $('.head-nav_list ');
+    if ($mob_part.hasClass('m_menu')) {
+        $mob_part.removeClass('m_menu');
          $(this).removeClass('active');
+     }
+    else{
+         $(this).addClass('active');
+         $mob_part.addClass('m_menu');
     };
      });
-
 
 
 
