@@ -375,4 +375,10 @@
 .text-block, .slider-about {
     width: 100%;
 }
+.slick-nav--next {
+    right: 0;
+}
+.slick-nav--prev {
+    left: 0;
+}
 }
