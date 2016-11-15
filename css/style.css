@@ -644,6 +644,7 @@ body {
   padding-bottom: 25px;
   margin-bottom: 25px;
   border-bottom: 2px solid #f2f2f2;
+  overflow: hidden;
 }
 .news-item:last-child {
   border-bottom: none;
