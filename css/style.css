@@ -228,7 +228,7 @@ body {
 }
 .text-block {
   width: 50.88%;
-  padding: 60px 10px 50px 0;
+  padding: 51px 10px 50px 0;
   position: relative;
   box-sizing: border-box;
 }
@@ -375,7 +375,6 @@ body {
 }
 .provider-item_button:hover {
   background: #febe11;
-  color: #252525;
   border: 2px solid #febe11;
 }
 .index-contact {
